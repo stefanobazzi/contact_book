@@ -33,8 +33,11 @@ class Contacts(object):
 
     def add_contact(self, user):
         self.users.append(user)
+        self.db = sqlite3.connect('data.db')
         self.db.execute(
-            "INSERT INTO users VALUES (?, ?, ?)", (user.name, user.surname, user.job))
+            "INSERT INTO users(name, surname, job) VALUES (?, ?, ?)", (user.name, user.surname, user.job))
+        self.db.commit()
+        self.db.close()
 
     def search_contact(self, name, surname=None, job=None):
         #user = self.db.execute("SELECT * FROM users WHERE (name=?)", name).fetchall()
