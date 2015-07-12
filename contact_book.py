@@ -17,6 +17,7 @@ class MainWindow(QMainWindow, Ui_ContactBookGui):
         self.setupUi(self)
         self.insert_button.clicked.connect(self.insert)
         self.search_button.clicked.connect(self.search)
+        self.viewall_button.clicked.connect(self.view_all)
 
     def insert(self):
         user = User(self.name_line.text(), self.surname_line.text(), 
