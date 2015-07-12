@@ -24,7 +24,7 @@ class Contacts(object):
         if exists(getcwd()+'/data.db'):
             self.db = sqlite3.connect('data.db')
             users = self.db.execute("SELECT * FROM users").fetchall()
-            self.data = [User(u[0], u[1], u[2]) for u in users]
+            self.users = [User(u[0], u[1], u[2]) for u in users]
         else:
             self.db = sqlite3.connect('data.db')
             self.db.execute(
