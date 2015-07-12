@@ -33,7 +33,6 @@ class MainWindow(QMainWindow, Ui_ContactBookGui):
             self.users_table.setItem(i, 0, name)
             self.users_table.setItem(i, 1, surname)
             self.users_table.setItem(i, 2, job)
-        print(user.name, user.surname, user.job)
 
     def search(self):
         users = self.contacts.search_contact(self.name_line.text())
