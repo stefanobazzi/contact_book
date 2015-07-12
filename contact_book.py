@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PySide.QtGui import QApplication, QMainWindow
+from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem
 from contact_book_gui import Ui_ContactBookGui
 from contact_book_data import Contacts, User
 
