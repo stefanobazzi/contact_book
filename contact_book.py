@@ -36,6 +36,10 @@ class MainWindow(QMainWindow, Ui_ContactBookGui):
 
     def search(self):
         users = self.contacts.search_contact(self.name_line.text())
+        self.create_rows(users)
+
+    def view_all(self):
+        self.create_rows(self.contacts.users)
 
 
 def main():
