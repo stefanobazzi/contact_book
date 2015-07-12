@@ -23,7 +23,8 @@ class Contacts(object):
         """Create a new sqlite DB if not exits else load data"""
         if exists(getcwd()+'/data.db'):
             self.db = sqlite3.connect('data.db')
-            users = self.db.execute("SELECT * FROM users").fetchall()
+            users = self.db.execute("SELECT name, surname, job FROM users")
+            print(dir(users))
             self.users = [User(u[0], u[1], u[2]) for u in users]
         else:
             self.db = sqlite3.connect('data.db')
