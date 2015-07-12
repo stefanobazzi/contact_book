@@ -40,6 +40,5 @@ class Contacts(object):
         self.db.close()
 
     def search_contact(self, name, surname=None, job=None):
-        #user = self.db.execute("SELECT * FROM users WHERE (name=?)", name).fetchall()
-        user_list = [u for u in users if u.name == name]
+        user_list = [u for u in self.users if u.name == name]
         return user_list
