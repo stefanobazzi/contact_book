@@ -29,6 +29,7 @@ class Contacts(object):
             self.db = sqlite3.connect('data.db')
             self.db.execute(
                 "CREATE TABLE users (name text, surname, text, job text)")
+        self.db.close()
 
     def add_contact(self, user):
         self.users.append(user)
