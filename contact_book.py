@@ -23,6 +23,16 @@ class MainWindow(QMainWindow, Ui_ContactBookGui):
         user = User(self.name_line.text(), self.surname_line.text(), 
             self.jobs_combo.currentText())
         self.contacts.add_contact(user)
+
+    def create_rows(self, users):
+        self.users_table.setRowCount(len(users))
+        for i in range(len(users)):
+            name = QTableWidgetItem(users[i].name)
+            surname = QTableWidgetItem(users[i].surname)
+            job = QTableWidgetItem(users[i].job)
+            self.users_table.setItem(i, 0, name)
+            self.users_table.setItem(i, 1, surname)
+            self.users_table.setItem(i, 2, job)
         print(user.name, user.surname, user.job)
 
     def search(self):
